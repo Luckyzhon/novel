@@ -1,0 +1,48 @@
+.login-box{
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+    .form-box{
+        width: 100%;
+        .input-box{
+            border-bottom: 1px solid #ededed;
+            margin-top: 1rem;
+            display: flex;
+            input{
+                border: 0;
+                padding: .6rem;
+                flex: 1;
+            }
+            span{
+                display: inline-block;
+                margin-right: 1rem;
+                padding: .6rem;
+            }
+        }
+        .btn-box{
+            display: flex;
+            margin-top: 1.5rem;
+            button{
+                flex: 1;
+                background: #00C98D;
+                color: #fff;
+                height: 3rem;
+                line-height: 3rem;
+                text-align: center;
+                border: 0;
+                border-radius: .3125rem;
+            }
+        }
+        .reg-box{
+            display: flex;
+            justify-content: space-between;
+            margin-top: .9375rem;
+            p:nth-child(1){
+                color: #999;
+            }
+            p:nth-child(2){
+                color: #00C98D
+            }
+        }
+    }
+}

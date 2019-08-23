@@ -25,6 +25,7 @@ const Detail = lazy (()=>import('./pages/common/Detail/Detail'));
 
 const NotFind = lazy(()=>import('./pages/common/NotFind/NotFind'));
 const Login = lazy(()=>import('./pages/common/Login/Login'));
+const Register = lazy(()=>import('./pages/common/Login/Register'));
 
 
 
@@ -49,6 +50,8 @@ const AppPanel = (props)=>{
           <CacheRoute path='/girlarea' component={Girlarea}/>
           <CacheRoute path='/boyarea' component={Boyarea}/>
           <CacheRoute path='/book' component={Book}/>
+          <CacheRoute path='/login' component={Login}/>
+          <CacheRoute path='/register' component={Register}/>
           <Route component={NotFind}/>
         </CacheSwitch>
           {/* 子页面 */}

@@ -4,16 +4,17 @@ import TabBar from '../../../components/tab-bar/tab-bar'
 import './style.scss'
 
 
+
 export default class Home extends Component {
     render() {
         return (
             <div className="page" id="home">
                 <div className='home-header'>
                 <AppHeader 
-                    left={<span className="home-header-left"><img src='/images/logo.png'/> <img src='/images/title.png'/></span>} 
+                    left={<span className="home-header-left"><img src='/images/logo.png' alt='' /> <img src='/images/title.png' alt='' /></span>} 
                     right={
                         <div className="home-header-right">
-                            <img src='/images/login.png'/> 
+                            <img onClick={()=>this.toLogin()} src='/images/login.png' alt='' /> 
                             <span className="iconfont icon-shuji"></span> 
                             <span className="iconfont icon-sousuo"></span>
                         </div>}/>
@@ -21,5 +22,8 @@ export default class Home extends Component {
                 <TabBar/>
             </div>
         )
+    }
+    toLogin(){
+        this.props.history.push("/login");
     }
 }
