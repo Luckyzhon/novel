@@ -12,8 +12,9 @@ export const get = async (url, params = {})=>{
         let response = await fetch(`${url}${paramsStr}`);
         // 解析数据，当成文本解析
         let result = await response.json();
+        console.log(result)
         // 解析完成，得到结果
-        if(result.code === 0){
+        if(result.state === "200"){
             return result;
         }else{
             throw result;
@@ -35,7 +36,7 @@ export const post = async (url, params = {})=>{
         });
         // 接收到响应，处理数据
         let result = await response.json();
-        if(result.code === 0){
+        if(result.state === "200"){
             return result;
         }else{
             throw result;

@@ -1,3 +1,11 @@
+
+//注册
+const REGIESTER_API = '/api/regiester';
+
+//登录
+const LOGIN_API = '/api/login';
+
+
 //首页接口
 const Home_BOOKS_API = '/api/homeBooks';
 
@@ -34,6 +42,8 @@ const BOOKDETAILS_API = '/api/bookDetails';
 const BOOK_DETAILSCHANGE_API = '/api/bookDetailsChange';
 
 export default {
+    REGIESTER_API,
+    LOGIN_API,
     Home_BOOKS_API,
     JPBOOKS_API,
     NVSBOOKS_API,
