@@ -47,7 +47,9 @@ const mapStateToprops = (state)=>{
     console.log(state.rank)
 }
 const mapDispatchToprops = (dispatch)=>{
-    getRankData();
+    getRankData(){
+            
+    }
 }
 
 export default connect(mapStateToprops)(Rank)
