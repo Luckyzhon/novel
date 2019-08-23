@@ -1,0 +1,19 @@
+.head-box{
+    height: 3.0625rem;
+    line-height: 3.0625rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f3f3f3;
+    .img-box{
+        padding: 1rem;
+        img{
+            width: 1.6rem;
+            height: 1.5rem;
+        }
+    }
+    h1{
+        font-size: 1.25rem
+    }
+}
