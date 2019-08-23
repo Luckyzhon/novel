@@ -2,7 +2,7 @@
  * @Author: lyq 
  * @Date: 2019-08-22 10:51:00 
  * @Last Modified by: lyq
- * @Last Modified time: 2019-08-22 22:01:10
+ * @Last Modified time: 2019-08-23 08:15:51
  */
 
 const express = require("express");
@@ -14,7 +14,7 @@ const apiRouter = require("./routers/apiRouter");
 const app = express();
 
 var store = new MongoDBStore({
-    uri: 'mongodb://localhost:8080/DB_project', //连接数据库的路径
+    uri: 'mongodb://localhost:27017/DB_project', //连接数据库的路径
     collection: 'sessions' //session存放表格的名字
 });
 
@@ -39,7 +39,7 @@ app.use(session({
 app.use('/api', apiRouter);
 
 //连接数据库
-mongoose.connect('mongodb://localhost:8080/DB_project', {
+mongoose.connect('mongodb://localhost:27017/DB_project', {
     useNewUrlParser: true
 }, (error) => {
     !error && console.log('连接数据库成功');
