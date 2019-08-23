@@ -31,6 +31,7 @@ const Login = lazy(()=>import('./pages/common/Login/Login'));
 
 
 const AppPanel = (props)=>{
+
   return (
    
       <div className="app">
@@ -73,6 +74,8 @@ const AppPanel = (props)=>{
 }
 
 const App = (props)=>{
+
+  
   return (
     <Router>
     <Suspense fallback={<Loading/>}>
@@ -84,6 +87,8 @@ const App = (props)=>{
 }
 
 const mapStateToProps = (state)=>({
+
+  
   // isLogin: state.user.isLogin
 })
 const mapDispatchToProps = ()=>({
