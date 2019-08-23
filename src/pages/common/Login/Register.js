@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './style.scss'
 
-export default class Login extends Component {
+class Register extends Component {
     render() {
         return (
             <div className="login-box">
@@ -14,18 +14,17 @@ export default class Login extends Component {
                         <span>密码：</span>
                         <input type="password" placeholder="请输入密码" />
                     </div>
-                    <div className="btn-box">
-                        <button>登录</button>
+                    <div className="input-box">
+                        <span>确认密码：</span>
+                        <input type="password" placeholder="请确认密码" />
                     </div>
-                    <div className="reg-box">
-                        <p>忘记密码</p>
-                        <p onClick={()=>this.toRegister()}>注册</p>
+                    <div className="btn-box">
+                        <button>注册</button>
                     </div>
                 </div>
             </div>
-        )
-    }
-    toRegister(){
-        this.props.history.push('/register');
+        );
     }
 }
+
+export default Register;
