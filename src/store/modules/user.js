@@ -66,7 +66,7 @@ export const requestRegisterAction = (username, password, history) => async () =
 }
 
 //登录
-export const requestLoginAction = (username, password, history) => async () => {
+export const requestLoginAction = (username, password, history) => async (dispatch) => {
     try {
         let result = await post(api.LOGIN_API, {username, password});
         alert(result.data.message);

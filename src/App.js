@@ -59,8 +59,8 @@ const AppPanel = (props)=>{
           <Route path='/classify/classifylist/:id' component={ClassifyList}/>
           <Route path='/classify/classifylist/detail/:id' component={Detail}/>
            {/*排行*/}
-          <Route path='/rank/ranklist/:flag' component={RankList}/>
-          <Route path='/rank/ranklist/detail/:id' component={Detail}/>
+            <Route path='/rank/ranklist/:flag' component={RankList}/>
+            <Route path='/rank/ranklist/detail/:id' component={Detail}/>
           {/*女频*/}
           <Route path='/rank/ranklist/detail/:id' component={Detail}/>
           {/*男频*/}
