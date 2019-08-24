@@ -4,12 +4,13 @@ import thunk from 'redux-thunk'  //redux 的中间件，增强dispatch功能，�
 // 引入各个reducer模块
 import home from './modules/home'
 import classify from './modules/classify'
-
+import rank from './modules/rank'
 
 // 合并多个reducer
 const reducer = combineReducers({
   home,
   classify,
+  rank
 });
 
 // 使用redux开发者工具

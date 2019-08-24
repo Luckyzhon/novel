@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import AppHeader from '../../../components/head-back/headBack'
 import { requestRankData } from "../../../store/modules/rank";
 import {connect} from 'react-redux'
@@ -31,10 +32,49 @@ export default class Rank extends Component {
                     }
                 </ul>
 
+=======
+import {  Link, Route , BrowserRouter as Router  } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {requestRankData} from '../../../store/modules/rank'
+import './rank.scss'
+import AppHeader from '../../../components/head-back/headBack'
+
+ class Rank extends Component {
+     
+    render() {
+        let listData = this.props.listData 
+       
+        console.log(listData)
+        const listDOM = listData.map(item=>(
+           item.content.title ? <Link className='list-item' key={item.id} to='rank/ranklist/:flag' >
+                    <span className='bgPic'></span>
+                    <div><h3>
+                        {item.content.title}
+                    </h3>
+                    <span>
+                        {item.content.desc}
+                    </span></div>
+                
+                
+            </Link> : ''
+        ))
+        return (
+            
+            <div className='rank'>
+                <AppHeader title='排行' info={this.props}/>
+                <ul className='list'>
+                    {
+                        listDOM
+                    }
+                </ul>
+                
+>>>>>>> fc4d68513958204897829789f8e3661b7e43ebb6
             </div>
+           
         )
     }
     componentDidMount(){
+<<<<<<< HEAD
         // requestRankData();
         // get(api.RANKING_API).then(result=>{
         //     this.setState({rankData:result})
@@ -53,3 +93,29 @@ const mapDispatchToprops = (dispatch)=>{
 }
 
 export default connect(mapStateToprops)(Rank)
+=======
+        this.props.getRankData()
+    }
+    goChildren(){
+        console.log(this.props)
+        this.props.history.push('rank/ranklist/:flag')
+    }
+}
+
+const mapStateToProps = (state)=>({
+    
+    listData : state.rank.rankData
+    
+})
+
+const mapDispatchToProps = (dispatch)=>({
+
+    getRankData(){
+        let action = requestRankData()
+        dispatch(action)
+    }
+})
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Rank)
+>>>>>>> fc4d68513958204897829789f8e3661b7e43ebb6

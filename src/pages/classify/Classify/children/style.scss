@@ -1,0 +1,36 @@
+#classifygirldata{
+    background: #f1f1f1;
+ 
+    h1{
+        display: block;
+        height: 1.875rem;
+        background: #f1f1f1;
+        color: #999999;
+        font-size: .75rem;
+        line-height:  1.875rem;
+        margin-left: 1rem;
+       
+    }
+    .classifygirldata-con{
+      
+        background: #fff;
+        .box{
+            padding: .625rem 0 .625rem 1rem;
+            // padding-left: 1rem;
+            border-bottom: .0625rem solid #f1f1f1;
+            // line-height: 4.1875rem;
+            h2{
+                font-size: .875rem;
+                color: #333333;
+            }
+            span{
+                font-size: .75rem;
+                color: #999999;
+                padding: .3125rem;
+               
+            }
+        }
+
+
+    }
+}
