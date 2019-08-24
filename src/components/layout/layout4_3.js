@@ -4,7 +4,6 @@ import './style.scss'
 class layout4_3 extends Component {
     render() {
         let bookList = this.props.list;
-        console.log(bookList);
         let itemList4 = bookList.length > 0 ? bookList[0].slice(0, 4).map((item) => 
                             <li className="item" key={item.bid}>
                                 <img src={item.book_cover} alt="" />

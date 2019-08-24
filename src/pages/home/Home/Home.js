@@ -15,10 +15,11 @@ export default class Home extends Component {
     state = {
         bannerImg: "",
         jpBooks: [],
-        list: []
+        nvBooks: [],
+        nanBooks: []
     }
     render() {
-        let {bannerImg, jpBooks, list} = this.state;
+        let {bannerImg, jpBooks, nvBooks, nanBooks} = this.state;
         let itemList = jpBooks.length > 0 ? jpBooks[0].map((item) => 
                             <li className="item" key={item.bid}>
                                 <img src={item.book_cover} alt="" />
@@ -58,7 +59,8 @@ export default class Home extends Component {
                         </div>
                     </div>
 
-                    <Layout4_3 title="女生美文" list={list} />
+                    <Layout4_3 title="女生美文" list={nvBooks} />
+                    <Layout4_3 title="男生热文" list={nanBooks} />
                 </div>
             </div>
         )
@@ -72,7 +74,8 @@ export default class Home extends Component {
             this.setState({
                 bannerImg: module[1].content[0].image_url,
                 jpBooks: [...this.state.jpBooks, module[2].content],
-                list: [...this.state.list, module[3].content]
+                nvBooks: [...this.state.nvBooks, module[3].content],
+                nanBooks: [...this.state.nanBooks, module[4].content]
             })
         }).catch((err) => {
             console.log("请求失败");
