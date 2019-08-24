@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import HeadBack from '../../../components/head-back/headBack'
 import AppScroll from '../../../components/app-scroll/app-scroll';
 import {requestClassifyAction} from '../../../store/modules/classify';
-// import ClassifyData from './children/ClassifyData'
+import ClassifyGirldata from './children/ClassifyGirldata'
+
 
 
 
@@ -10,14 +12,15 @@ import {requestClassifyAction} from '../../../store/modules/classify';
    
      
     render() {
+
         let {classify} = this.props;
+ 
         return (
             <div className="page"> 
-              
+              <HeadBack title="分类" info={this.props}/>
                <AppScroll>
-                   {
-                    //    classify.map((item)=>)
-                   }
+
+                   <ClassifyGirldata {...classify} {...this.props}/> 
                </AppScroll>
             </div>
         )
@@ -29,10 +32,8 @@ import {requestClassifyAction} from '../../../store/modules/classify';
 
 
 
-
-
 const mapStateToProps = (state)=>({
-    classify:state.classifyCount
+    classify:state.classify.classifyCount  //state加上modules里面的名字
       
 })
 

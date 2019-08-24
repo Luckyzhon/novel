@@ -1,4 +1,3 @@
-
 import api from '../../utils/api'
 import {get} from '../../utils/request'
 
@@ -38,10 +37,8 @@ const setClassifyData = (value)=>({
 //异步action
 export const requestClassifyAction =() => async(dispatch)=>{
     let {data} = await get (api.CLASSIFY_API);
-    // console.log(await get (api.CLASSIFY_API));
-    // dispatch(setClassifyData(data));
-    console.log(dispatch(setClassifyData(data)));  
-    console.log(data);
+    dispatch(setClassifyData(data));
+
 
 }
 
