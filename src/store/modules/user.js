@@ -2,20 +2,20 @@
  * @Author: lyq 
  * @Date: 2019-08-23 20:23:44 
  * @Last Modified by: lyq
- * @Last Modified time: 2019-08-23 22:02:00
+ * @Last Modified time: 2019-08-24 09:40:47
  */
 
  import api from '../../utils/api'
- import {post, get} from '../../utils/request'
+ import {post} from '../../utils/request'
+ import {Toast} from 'antd-mobile'
+ import 'antd-mobile/lib/toast/style/css'
 
 //types
 const set_login_status = 'user/set_login_status';
-const set_user_info = 'user/set_user_info';
 
 // state
 const initialState = {
     isLogin: false,
-    userInfo: {}
 };
 
 // reducer
@@ -25,11 +25,6 @@ export default (state = initialState, action)=>{
             return{
                 ...state,
                 isLogin: action.value
-            }
-        case set_user_info:
-            return{
-                ...state,
-                userInfo: action.value
             }
         default:
             return state;
@@ -43,11 +38,6 @@ const setLoginStatusAction = (value) => ({
     value
 })
 
-//设置用户信息
-const setUserInfoAction = (value) => ({
-    type: set_user_info,
-    value
-})
 
 
 
@@ -56,7 +46,7 @@ const setUserInfoAction = (value) => ({
 export const requestRegisterAction = (username, password, history) => async () => {
     try {
         let result = await post(api.REGIESTER_API, {username, password});
-        alert(result.data.message);
+        Toast.info(result.data.message);
         if (result.data.code === 0) {
             history.push('/login')
         }
@@ -69,7 +59,7 @@ export const requestRegisterAction = (username, password, history) => async () =
 export const requestLoginAction = (username, password, history) => async (dispatch) => {
     try {
         let result = await post(api.LOGIN_API, {username, password});
-        alert(result.data.message);
+        Toast.info(result.data.message);
         if (result.data.code === 0) {
             let action = setLoginStatusAction(true);
             dispatch(action);
