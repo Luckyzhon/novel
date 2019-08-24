@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import HeadBack from '../../../components/head-back/headBack'
 import {requestLoginAction} from '../../../store/modules/user'
+import {Toast} from 'antd-mobile'
+
 
 import './style.scss'
 
@@ -65,7 +67,11 @@ const mapDispatchToProps = (dispatch)=>({
     //登录
     loginAction(username, password, history){
         if(!(/(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/.test(username))){
-            alert('手机号格式不正确!');
+            Toast.info('手机号格式不正确!');
+            return;
+        }
+        if (password === "" || password === undefined) {
+            Toast.info('密码不能为空!');
             return;
         }
 

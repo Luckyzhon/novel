@@ -1,0 +1,114 @@
+.wrapper{
+    padding-top: 1rem;
+    background: #fff;
+    margin-top: 1rem;
+    .title{
+      color: #333;
+      font-size: .875rem;
+      position: relative;
+      width: 4.5rem;
+      padding-left: 1.25rem;
+
+      .icon{
+        position: absolute;
+        left: 0;
+        width: .25rem;
+        height: 1rem;
+        display: inline-block;
+        background: #00c98d;
+        top: .0625rem
+      }
+    }
+    .list{
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ededed;
+      .item{
+        width: 4.5rem;
+        img{
+          width: 100%;
+        }
+        p{
+          font-size: .875rem;
+          margin: .5rem 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          word-break: break-all;
+          width: 100%;
+        }
+        span{
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          word-break: break-all;
+          width: 100%;
+          color: #999;
+          font-size: .875rem;
+        }
+      }
+    }
+
+    .wrap-list{
+        padding-left: 1rem;
+        .wrap-item{
+            padding: .5rem .8rem 0 0;
+            .item-box{
+                padding: .8rem 0;
+                border-bottom: 1px solid #ededed;
+                .item-title{
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3{
+                        font-size: 1rem;
+                        color: #333;
+                    }
+                    p{
+                        span{
+                            display: inline-block;
+                            height: 1.125rem;
+                            line-height: 1.125rem;
+                            padding: .0625rem .25rem;
+                            border: 1px solid rgba(153,153,153,.3);
+                            border-radius: .04rem;
+                            font-size: .75rem;
+                            color: #999;
+                            margin-right: .25rem;
+                            vertical-align: text-bottom;
+                            background: transparent;
+                            &.co{
+                                color: #70a7e3
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .item-desc{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            width: 100%;
+            color: #999;
+            margin-top: .3125rem
+        }
+    }
+
+    .change{
+      height: 3.0625rem;
+      line-height: 3.0625rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 1rem;
+        height: 1rem;
+        margin-left: .25rem;
+      }
+    }
+  }

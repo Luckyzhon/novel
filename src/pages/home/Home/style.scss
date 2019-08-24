@@ -35,5 +35,82 @@
         }
     }
    
+    .main{
+      position: absolute;
+      top: 8.8rem;
+      width: 100%;
+      height: 100%;
 
+      .banner{
+        img{
+          width: 100%
+        }
+      }
+      
+      .jp{
+        padding-top: 1rem;
+        background: #fff;
+        .jp_title{
+          color: #333;
+          font-size: .875rem;
+          position: relative;
+          width: 4.5rem;
+          padding-left: 1.25rem;
+
+          .icon{
+            position: absolute;
+            left: 0;
+            width: .25rem;
+            height: 1rem;
+            display: inline-block;
+            background: #00c98d;
+            top: .0625rem
+          }
+        }
+        .list{
+          margin-top: 1rem;
+          display: flex;
+          justify-content: space-around;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #ededed;
+          .item{
+            width: 4.5rem;
+            img{
+              width: 100%;
+            }
+            p{
+              font-size: .875rem;
+              margin: .5rem 0;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              word-break: break-all;
+              width: 100%;
+            }
+            span{
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              word-break: break-all;
+              width: 100%;
+              color: #999;
+              font-size: .875rem;
+            }
+          }
+        }
+
+        .change{
+          height: 3.0625rem;
+          line-height: 3.0625rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img{
+            width: 1rem;
+            height: 1rem;
+            margin-left: .25rem;
+          }
+        }
+      }
+    }
 }
