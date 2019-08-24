@@ -12,7 +12,6 @@ export const get = async (url, params = {})=>{
         let response = await fetch(`${url}${paramsStr}`);
         // 解析数据，当成文本解析
         let result = await response.json();
-        console.log(result)
         // 解析完成，得到结果
         if(result.state === "200"){
             return result;
