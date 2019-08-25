@@ -45,7 +45,32 @@ export const post = async (url, params = {})=>{
     }
 }
 
+
+export const getBook = async (url, params = {})=>{
+    try {
+        // 处理参数
+        let paramsStr = '';
+        Object.entries(params).forEach(([key, value], index)=>{
+            paramsStr += (index === 0) ? '?' : '&';
+            paramsStr += `${key}=${encodeURIComponent(value)}`;
+        })
+        // 发送请求,得到响应对象
+        let response = await fetch(`${url}${paramsStr}`);
+        // 解析数据，当成文本解析
+        let result = await response.json();
+        // 解析完成，得到结果
+        if(result.status === 1){
+            return result;
+        }else{
+            throw result;
+        }
+    } catch (error) {
+        throw error;
+    }
+}
+
 export default {
     get,
-    post
+    post,
+    getBook
 }
