@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import AppHeader from '../../../components/app-header/app-header'
 import TabBar from '../../../components/tab-bar/tab-bar'
-import Layout4_3 from '../../../components/layout/layout4_3'
+import Layout43 from '../../../components/layout/layout4_3'
+import Layout15 from '../../../components/layout/layout1_5'
 import api from '../../../utils/api'
 import './style.scss'
 import { fetch } from 'whatwg-fetch';
@@ -16,10 +17,11 @@ export default class Home extends Component {
         bannerImg: "",
         jpBooks: [],
         nvBooks: [],
-        nanBooks: []
+        nanBooks: [],
+        newBooks: []
     }
     render() {
-        let {bannerImg, jpBooks, nvBooks, nanBooks} = this.state;
+        let {bannerImg, jpBooks, nvBooks, nanBooks, newBooks} = this.state;
         let itemList = jpBooks.length > 0 ? jpBooks[0].map((item) => 
                             <li className="item" key={item.bid}>
                                 <img src={item.book_cover} alt="" />
@@ -59,8 +61,9 @@ export default class Home extends Component {
                         </div>
                     </div>
 
-                    <Layout4_3 title="女生美文" list={nvBooks} />
-                    <Layout4_3 title="男生热文" list={nanBooks} />
+                    <Layout43 title="女生美文" list={nvBooks} />
+                    <Layout43 title="男生热文" list={nanBooks} />
+                    <Layout15 title="新书专区" list={newBooks} />
                 </div>
             </div>
         )
@@ -75,15 +78,16 @@ export default class Home extends Component {
                 bannerImg: module[1].content[0].image_url,
                 jpBooks: [...this.state.jpBooks, module[2].content],
                 nvBooks: [...this.state.nvBooks, module[3].content],
-                nanBooks: [...this.state.nanBooks, module[4].content]
+                nanBooks: [...this.state.nanBooks, module[4].content],
+                newBooks: [...this.state.newBooks, module[5].content]
             })
         }).catch((err) => {
             console.log("请求失败");
             console.log(err);
-        });
-        Toast.loading('加载中...',1,()=>{
+            Toast.loading('加载失败，请重试',2,()=>{
             
-        })
+            })
+        });
     }
     toLogin(){
         this.props.history.push("/login");

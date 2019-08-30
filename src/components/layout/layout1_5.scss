@@ -1,0 +1,76 @@
+.wrapper {
+    padding-top: 1rem;
+    background: #fff;
+    margin-top: 1rem;
+
+    .title {
+        color: #333;
+        font-size: .875rem;
+        position: relative;
+        width: 4.5rem;
+        padding-left: 1.25rem;
+
+        .icon {
+            position: absolute;
+            left: 0;
+            width: .25rem;
+            height: 1rem;
+            display: inline-block;
+            background: #00c98d;
+            top: .0625rem
+        }
+    }
+
+    .item1 {
+        padding: 1rem;
+        display: flex;
+
+        .img-box {
+            width: 7.4rem;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .item1-content {
+            padding-left: 1rem;
+
+            h3 {
+                margin-bottom: .3125rem
+            }
+
+            p {
+                color: #999;
+                margin-bottom: .3125rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                max-height: 100%;
+            }
+        }
+
+        .book-tag {
+            width: 100%;
+
+            span {
+                font-size: .2rem;
+                height: 1rem;
+                line-height: 1rem;
+                border: 1px solid rgba(153, 153, 153, .3);
+                border-radius: .04rem;
+                padding: 0 .45rem;
+                margin-right: .25rem;
+                color: #999;
+                display: inline-block;
+
+                &.co {
+                    color: #499fff;
+                }
+            }
+        }
+    }
+}
